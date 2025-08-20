@@ -222,6 +222,31 @@
             background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
+        
+        /* Protective Shield for Finasteride */
+        .protective-shield {
+            position: absolute;
+            width: 4.5vw;
+            height: 4.5vw;
+            border: 2px dashed #8B4513;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.8;
+            animation: shield-pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes shield-pulse {
+            0%, 100% { 
+                border-color: #8B4513;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% { 
+                border-color: #A0522D;
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -303,6 +328,7 @@
                     <div class="pathway-card" style="--card-accent-color: #8B4513;">
                         <div class="mini-diagram">
                             <div class="mini-follicle-container">
+                                <div class="protective-shield"></div>
                                 <div class="mini-follicle"><div class="mini-dp"></div></div>
                             </div>
                         </div>
