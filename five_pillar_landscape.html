@@ -107,13 +107,32 @@
             text-align: center;
             padding: 0.5rem 0;
             color: #202124;
+            height: 3.5vw; /* Fixed height for consistent alignment */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .description-container {
+            height: 6vw; /* Fixed height for description area */
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .description-text {
+            font-size: 0.8vw;
+            color: #5f6368;
+            line-height: 1.4;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
         }
         .mechanism-steps-container {
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            min-height: 12vw; /* Fixed height to ensure alignment */
+            min-height: 10vw; /* Fixed height to ensure alignment */
         }
         .mechanism-step {
             display: flex;
@@ -226,7 +245,9 @@
                             </div>
                         </div>
                         <h2 class="pathway-title" style="color: #ea4335;">PRP: Der Bio-Stimulator</h2>
-                        <p class="text-[0.8vw] text-gray-700 mb-3 leading-relaxed">Plättchenreiches Plasma (PRP) nutzt eine hohe Konzentration Ihrer eigenen Blutplättchen, um einen wirkungsvollen Cocktail aus Wachstumsfaktoren direkt an den Follikel zu liefern.</p>
+                        <div class="description-container">
+                            <p class="description-text">Plättchenreiches Plasma (PRP) nutzt eine hohe Konzentration Ihrer eigenen Blutplättchen, um einen wirkungsvollen Cocktail aus Wachstumsfaktoren direkt an den Follikel zu liefern.</p>
+                        </div>
                         <div class="mechanism-steps-container">
                             <div class="mechanism-step"><div class="step-number">1</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Freisetzung von Wachstumsfaktoren</h3><p class="text-[0.78vw] text-gray-600 leading-snug">Aktivierte Blutplättchen setzen Wachstumsfaktoren frei, die die Follikelumgebung sättigen.</p></div></div>
                             <div class="mechanism-step"><div class="step-number">2</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Aktivierung von DP & Bulge</h3><p class="text-[0.78vw] text-gray-600 leading-snug">Diese Faktoren signalisieren der Dermalpapille und den Stammzellen, ruhende Follikel in die Wachstumsphase zu drängen.</p></div></div>
@@ -245,7 +266,9 @@
                             </div>
                         </div>
                         <h2 class="pathway-title" style="color: #1a73e8;">Exosomen: Die Botenstoffe</h2>
-                        <p class="text-[0.8vw] text-gray-700 mb-3 leading-relaxed">Exosomen sind mikroskopisch kleine Vesikel, reich an Wachstumsfaktoren und genetischem Material. Sie fungieren als direkte Kommunikatoren und übermitteln regenerative Anweisungen.</p>
+                        <div class="description-container">
+                            <p class="description-text">Exosomen sind mikroskopisch kleine Vesikel, reich an Wachstumsfaktoren und genetischem Material. Sie fungieren als direkte Kommunikatoren und übermitteln regenerative Anweisungen.</p>
+                        </div>
                         <div class="mechanism-steps-container">
                             <div class="mechanism-step"><div class="step-number">1</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Direkte Signalgebung</h3><p class="text-[0.78vw] text-gray-600 leading-snug">Exosomen werden von den Zellen der Dermalpapille und der Bulge-Region aufgenommen und geben ihre Fracht ab.</p></div></div>
                             <div class="mechanism-step"><div class="step-number">2</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Zellproliferation</h3><p class="text-[0.78vw] text-gray-600 leading-snug">Die Anweisungen veranlassen die Zellen, sich zu vermehren und den Follikel für eine neue Wachstumsphase zu regenerieren.</p></div></div>
@@ -264,7 +287,9 @@
                             </div>
                         </div>
                         <h2 class="pathway-title" style="color: #9c27b0;">Minoxidil: Der Stimulator</h2>
-                        <p class="text-[0.8vw] text-gray-700 mb-3 leading-relaxed">Ursprünglich ein Blutdruckmedikament, ist der Hauptmechanismus von Minoxidil die Gefäßerweiterung, es hat aber auch direkte Auswirkungen auf den Wachstumszyklus des Follikels.</p>
+                        <div class="description-container">
+                            <p class="description-text">Ursprünglich ein Blutdruckmedikament, ist der Hauptmechanismus von Minoxidil die Gefäßerweiterung, es hat aber auch direkte Auswirkungen auf den Wachstumszyklus des Follikels.</p>
+                        </div>
                         <div class="mechanism-steps-container">
                             <div class="mechanism-step"><div class="step-number">1</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Gefäßerweiterung</h3><p class="text-[0.78vw] text-gray-600 leading-snug">Öffnet Kaliumkanäle in den Blutgefäßen, was die Durchblutung und Nährstoffversorgung des Follikels erhöht.</p></div></div>
                             <div class="mechanism-step"><div class="step-number">2</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Verlängerung der Anagenphase</h3><p class="text-[0.78vw] text-gray-600 leading-snug">Stimuliert direkt die DP-Zellen und verlängert die Wachstumsphase, was zu längeren und dickeren Haaren führt.</p></div></div>
@@ -282,7 +307,9 @@
                             </div>
                         </div>
                         <h2 class="pathway-title" style="color: #34a853;">Finasterid: Der Beschützer</h2>
-                        <p class="text-[0.8vw] text-gray-700 mb-3 leading-relaxed">Finasterid wirkt systemisch, um den Haarfollikel vor den miniaturisierenden Effekten von Dihydrotestosteron (DHT) zu schützen, dem Hauptverursacher der männlichen Glatzenbildung.</p>
+                        <div class="description-container">
+                            <p class="description-text">Finasterid wirkt systemisch, um den Haarfollikel vor den miniaturisierenden Effekten von Dihydrotestosteron (DHT) zu schützen, dem Hauptverursacher der männlichen Glatzenbildung.</p>
+                        </div>
                         <div class="mechanism-steps-container">
                             <div class="mechanism-step"><div class="step-number">1</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Enzymhemmung</h3><p class="text-[0.78vw] text-gray-600 leading-snug">Blockiert das Enzym 5-Alpha-Reduktase und verhindert so die Umwandlung von Testosteron in DHT.</p></div></div>
                             <div class="mechanism-step"><div class="step-number">2</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Schutz des Follikels</h3><p class="text-[0.78vw] text-gray-600 leading-snug">Mit weniger DHT erhalten die DP-Zellen nicht mehr das Signal zum Schrumpfen. Dies stoppt die Miniaturisierung.</p></div></div>
@@ -301,7 +328,9 @@
                             </div>
                         </div>
                         <h2 class="pathway-title" style="color: #fbbc04;">Nahrungsergänzung</h2>
-                        <p class="text-[0.8vw] text-gray-700 mb-3 leading-relaxed">Nahrungsergänzungsmittel wirken systemisch, um ein optimales inneres Umfeld für gesundes Haarwachstum zu schaffen, indem sie wichtige Bausteine und Schutz bieten.</p>
+                        <div class="description-container">
+                            <p class="description-text">Nahrungsergänzungsmittel wirken systemisch, um ein optimales inneres Umfeld für gesundes Haarwachstum zu schaffen, indem sie wichtige Bausteine und Schutz bieten.</p>
+                        </div>
                         <div class="mechanism-steps-container">
                             <div class="mechanism-step"><div class="step-number">1</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Hormonelles Gleichgewicht</h3><p class="text-[0.78vw] text-gray-600 leading-snug">Sägepalme kann helfen, den DHT-Spiegel zu senken, während Vitamine und Mineralien den Follikel nähren.</p></div></div>
                             <div class="mechanism-step"><div class="step-number">2</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Zellulärer Schutz</h3><p class="text-[0.78vw] text-gray-600 leading-snug">Antioxidantien wie Curcumin und Vitamin E schützen den Follikel vor oxidativem Stress.</p></div></div>
