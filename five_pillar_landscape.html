@@ -14,7 +14,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #fafbfc;
+            background: #F9F8F6;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -33,23 +33,23 @@
             width: 100%;
             max-width: 1600px;
             aspect-ratio: 16 / 9;
-            background: #ffffff;
+            background: #F9F8F6;
             display: flex;
             flex-direction: column;
             padding: 1.5vw 2vw;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-            border: 1px solid #e8eaed;
-            border-radius: 16px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e5e7eb;
+            border-radius: 1rem;
         }
         .brand-text {
-            color: #202124;
+            color: #143737;
         }
         
         /* Nettoeffekt alignment */
         .nettoeffekt-container {
             margin-top: auto;
             padding-top: 1.5rem;
-            border-top: 2px solid #f1f3f4;
+            border-top: 2px solid #e5e7eb;
             min-height: 3.5vw;
             display: flex;
             align-items: center;
@@ -57,27 +57,28 @@
         }
         
         .nettoeffekt-text {
-            font-weight: 600;
+            font-weight: 700;
             text-align: center;
-            color: #202124;
+            color: #143737;
             font-size: 0.9vw;
             line-height: 1.4;
         }
         
-        /* Mara-style colors */
+        /* Mara authentic colors */
         :root {
-            --mara-primary: #1a73e8;
-            --mara-secondary: #34a853;
-            --mara-accent: #ea4335;
-            --mara-warning: #fbbc04;
-            --mara-purple: #9c27b0;
+            --mara-primary: #143737;
+            --mara-accent1: #c79653;
+            --mara-accent2: #8B4513;
+            --mara-accent3: #2E8B57;
+            --mara-accent4: #4682B4;
+            --mara-accent5: #CD853F;
         }
         .pathway-card {
             background: #ffffff;
-            border-radius: 12px;
-            padding: 1.5vw;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid #e8eaed;
+            border-radius: 0.75rem;
+            padding: 1.2vw;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e5e7eb;
             display: flex;
             flex-direction: column;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -91,22 +92,22 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: var(--card-accent-color, #1a73e8);
-            border-radius: 12px 12px 0 0;
+            height: 4px;
+            background: var(--card-accent-color, #143737);
+            border-radius: 0.75rem 0.75rem 0 0;
         }
         .pathway-card:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
         }
         .pathway-title {
             font-size: 1.1vw;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 1rem;
-            line-height: 1.3;
+            line-height: 1.2;
             text-align: center;
             padding: 0.5rem 0;
-            color: #202124;
+            color: #143737;
             height: 3.5vw; /* Fixed height for consistent alignment */
             display: flex;
             align-items: center;
@@ -120,8 +121,8 @@
         }
         .description-text {
             font-size: 0.8vw;
-            color: #5f6368;
-            line-height: 1.4;
+            color: #666666;
+            line-height: 1.5;
             overflow: hidden;
             display: -webkit-box;
             -webkit-line-clamp: 4;
@@ -149,24 +150,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.8vw;
             color: white;
             margin-right: 0.8rem;
-            background: var(--card-accent-color, #1a73e8);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            background: var(--card-accent-color, #143737);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         /* Mini Diagram Styles */
         .mini-diagram {
             height: 6vw;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border: 1px solid #e8eaed;
+            background: transparent;
+            border-radius: 0.5rem;
         }
         .mini-follicle-container {
             position: relative;
@@ -230,21 +230,21 @@
             <header class="text-center mb-4">
                 <img src="https://cdn.prod.website-files.com/686ba99f7e881278bf8341e5/686bafa8ce0f0a4ccaf45537_mara-logo.svg" alt="Mara Logo" class="h-[2.2vw] max-h-10 mx-auto mb-2">
                 <h1 class="text-[2.2vw] lg:text-4xl font-bold brand-text leading-tight">
-                    Der zelluläre Kampf um <span style="color: #1a73e8; text-shadow: 0 1px 2px rgba(0,0,0,0.1);">Haarwachstum</span>
+                    Der zelluläre Kampf um <span style="color: #c79653; text-shadow: 0 1px 2px rgba(0,0,0,0.1);">Haarwachstum</span>
                 </h1>
             </header>
     
             <main class="w-full flex-grow">
                 <div class="grid grid-cols-5 gap-[1.2vw] h-full">
                     <!-- PRP -->
-                    <div class="pathway-card" style="--card-accent-color: #ea4335;">
+                    <div class="pathway-card" style="--card-accent-color: #c79653;">
                         <div class="mini-diagram">
                             <div class="mini-follicle-container">
                                 <div class="mini-follicle"><div class="mini-dp"></div><div class="mini-bulge"></div></div>
                                 <div class="mini-vessels"><div class="vessel" style="width: 100%; left: 0;"></div></div>
                             </div>
                         </div>
-                        <h2 class="pathway-title" style="color: #ea4335;">PRP: Der Bio-Stimulator</h2>
+                        <h2 class="pathway-title" style="color: #c79653;">PRP: Der Bio-Stimulator</h2>
                         <div class="description-container">
                             <p class="description-text">Plättchenreiches Plasma (PRP) nutzt eine hohe Konzentration Ihrer eigenen Blutplättchen, um einen wirkungsvollen Cocktail aus Wachstumsfaktoren direkt an den Follikel zu liefern.</p>
                         </div>
@@ -258,14 +258,14 @@
                     </div>
     
                     <!-- Exosomes -->
-                    <div class="pathway-card" style="--card-accent-color: #1a73e8;">
+                    <div class="pathway-card" style="--card-accent-color: #2E8B57;">
                         <div class="mini-diagram">
                             <div class="mini-follicle-container">
                                 <div class="mini-follicle"><div class="mini-dp"></div><div class="mini-bulge"></div></div>
                                 <div class="mini-vessels"><div class="vessel" style="width: 100%; left: 0;"></div></div>
                             </div>
                         </div>
-                        <h2 class="pathway-title" style="color: #1a73e8;">Exosomen: Die Botenstoffe</h2>
+                        <h2 class="pathway-title" style="color: #2E8B57;">Exosomen: Die Botenstoffe</h2>
                         <div class="description-container">
                             <p class="description-text">Exosomen sind mikroskopisch kleine Vesikel, reich an Wachstumsfaktoren und genetischem Material. Sie fungieren als direkte Kommunikatoren und übermitteln regenerative Anweisungen.</p>
                         </div>
@@ -279,14 +279,14 @@
                     </div>
 
                     <!-- Minoxidil -->
-                    <div class="pathway-card" style="--card-accent-color: #9c27b0;">
+                    <div class="pathway-card" style="--card-accent-color: #4682B4;">
                         <div class="mini-diagram">
                             <div class="mini-follicle-container">
                                 <div class="mini-follicle"><div class="mini-dp"></div></div>
                                 <div class="mini-vessels"><div class="vessel animate-pulse" style="width: 100%; left: 0;"></div></div>
                             </div>
                         </div>
-                        <h2 class="pathway-title" style="color: #9c27b0;">Minoxidil: Der Stimulator</h2>
+                        <h2 class="pathway-title" style="color: #4682B4;">Minoxidil: Der Stimulator</h2>
                         <div class="description-container">
                             <p class="description-text">Ursprünglich ein Blutdruckmedikament, ist der Hauptmechanismus von Minoxidil die Gefäßerweiterung, es hat aber auch direkte Auswirkungen auf den Wachstumszyklus des Follikels.</p>
                         </div>
@@ -300,13 +300,13 @@
                     </div>
     
                     <!-- Finasteride -->
-                    <div class="pathway-card" style="--card-accent-color: #34a853;">
+                    <div class="pathway-card" style="--card-accent-color: #8B4513;">
                         <div class="mini-diagram">
                             <div class="mini-follicle-container">
                                 <div class="mini-follicle"><div class="mini-dp"></div></div>
                             </div>
                         </div>
-                        <h2 class="pathway-title" style="color: #34a853;">Finasterid: Der Beschützer</h2>
+                        <h2 class="pathway-title" style="color: #8B4513;">Finasterid: Der Beschützer</h2>
                         <div class="description-container">
                             <p class="description-text">Finasterid wirkt systemisch, um den Haarfollikel vor den miniaturisierenden Effekten von Dihydrotestosteron (DHT) zu schützen, dem Hauptverursacher der männlichen Glatzenbildung.</p>
                         </div>
@@ -320,14 +320,14 @@
                     </div>
                     
                     <!-- Supplements -->
-                    <div class="pathway-card" style="--card-accent-color: #fbbc04;">
+                    <div class="pathway-card" style="--card-accent-color: #CD853F;">
                         <div class="mini-diagram">
                             <div class="mini-follicle-container">
                                 <div class="mini-follicle"><div class="mini-dp"></div><div class="mini-bulge"></div></div>
                                 <div class="mini-vessels"><div class="vessel" style="width: 45%; left: 0; background-color: #f87171;"></div><div class="vessel" style="width: 45%; right: 0; background-color: #60a5fa;"></div></div>
                             </div>
                         </div>
-                        <h2 class="pathway-title" style="color: #fbbc04;">Nahrungsergänzung</h2>
+                        <h2 class="pathway-title" style="color: #CD853F;">Nahrungsergänzung</h2>
                         <div class="description-container">
                             <p class="description-text">Nahrungsergänzungsmittel wirken systemisch, um ein optimales inneres Umfeld für gesundes Haarwachstum zu schaffen, indem sie wichtige Bausteine und Schutz bieten.</p>
                         </div>
