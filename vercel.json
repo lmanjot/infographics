@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/five_pillar_landscape.html"
+      "destination": "/index.html"
     }
   ]
 }

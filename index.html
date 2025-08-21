@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mara Hair Treatment - Wissenschaftliche Präsentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #F9F8F6;
+            overflow: hidden;
+        }
+
+        .slideshow-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-frame {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            pointer-events: none;
+        }
+
+        .slide-frame.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .slide-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .navigation-controls {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 2rem;
+            pointer-events: none;
+        }
+
+        .nav-button {
+            background: rgba(20, 55, 55, 0.9);
+            color: white;
+            border: none;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            pointer-events: all;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-button:hover {
+            background: rgba(199, 150, 83, 0.9);
+            transform: scale(1.1);
+        }
+
+        .nav-button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .nav-button svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .slide-indicator {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .indicator-dot {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            background: #d1d5db;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .indicator-dot.active {
+            background: #143737;
+            transform: scale(1.2);
+        }
+
+        .indicator-dot:hover {
+            background: #c79653;
+        }
+
+        .slide-title {
+            position: absolute;
+            top: 0.5rem;
+            left: 0.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #143737;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Loading animation */
+        .loading-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 3rem;
+            height: 3rem;
+            border: 3px solid #f3f4f6;
+            border-top: 3px solid #143737;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Keyboard navigation hint */
+        .keyboard-hint {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+            color: #6b7280;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            animation: fadeInOut 4s ease-in-out;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            20%, 80% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <!-- Slide 1: Five Pillar Landscape (Default) -->
+        <div class="slide-frame active" data-slide="0">
+            <div class="slide-title">Übersicht: Die 5 Säulen der Haarwiederherstellung</div>
+            <iframe src="five_pillar_landscape.html" loading="lazy"></iframe>
+            <div class="loading-spinner"></div>
+        </div>
+
+        <!-- Slide 2: PRP -->
+        <div class="slide-frame" data-slide="1">
+            <div class="slide-title">PRP: Der Bio-Stimulator</div>
+            <iframe src="prp.html" loading="lazy"></iframe>
+            <div class="loading-spinner"></div>
+        </div>
+
+        <!-- Slide 3: Exosomes -->
+        <div class="slide-frame" data-slide="2">
+            <div class="slide-title">Exosomen: Die Botenstoffe</div>
+            <iframe src="exosome.html" loading="lazy"></iframe>
+            <div class="loading-spinner"></div>
+        </div>
+
+        <!-- Slide 4: Blood Test -->
+        <div class="slide-frame" data-slide="3">
+            <div class="slide-title">Blutanalyse: Die Grundlage für den Erfolg</div>
+            <iframe src="bloodtest.html" loading="lazy"></iframe>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="navigation-controls">
+        <button class="nav-button" id="prevBtn" onclick="changeSlide(-1)" disabled>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+        </button>
+        <button class="nav-button" id="nextBtn" onclick="changeSlide(1)">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Slide Indicators -->
+    <div class="slide-indicator">
+        <div class="indicator-dot active" onclick="currentSlide(0)" title="Übersicht"></div>
+        <div class="indicator-dot" onclick="currentSlide(1)" title="PRP"></div>
+        <div class="indicator-dot" onclick="currentSlide(2)" title="Exosomen"></div>
+        <div class="indicator-dot" onclick="currentSlide(3)" title="Blutanalyse"></div>
+    </div>
+
+    <!-- Keyboard Navigation Hint -->
+    <div class="keyboard-hint">
+        Verwenden Sie ← → Pfeiltasten oder Leertaste zum Navigieren
+    </div>
+
+    <script>
+        let currentSlideIndex = 0;
+        const totalSlides = 4;
+        let iframesLoaded = {};
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateSlideVisibility();
+            updateNavigationButtons();
+            preloadNextSlide();
+            
+            // Hide loading spinner for first slide when loaded
+            const firstIframe = document.querySelector('.slide-frame.active iframe');
+            if (firstIframe) {
+                firstIframe.addEventListener('load', function() {
+                    hideLoadingSpinner(0);
+                    iframesLoaded[0] = true;
+                });
+            }
+        });
+
+        function changeSlide(direction) {
+            const newIndex = currentSlideIndex + direction;
+            if (newIndex >= 0 && newIndex < totalSlides) {
+                currentSlideIndex = newIndex;
+                updateSlideVisibility();
+                updateNavigationButtons();
+                updateIndicators();
+                preloadNextSlide();
+                
+                // Load iframe if not loaded yet
+                if (!iframesLoaded[currentSlideIndex]) {
+                    loadSlideContent(currentSlideIndex);
+                }
+            }
+        }
+
+        function currentSlide(index) {
+            if (index >= 0 && index < totalSlides) {
+                currentSlideIndex = index;
+                updateSlideVisibility();
+                updateNavigationButtons();
+                updateIndicators();
+                preloadNextSlide();
+                
+                // Load iframe if not loaded yet
+                if (!iframesLoaded[currentSlideIndex]) {
+                    loadSlideContent(currentSlideIndex);
+                }
+            }
+        }
+
+        function updateSlideVisibility() {
+            const slides = document.querySelectorAll('.slide-frame');
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlideIndex);
+            });
+        }
+
+        function updateNavigationButtons() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            prevBtn.disabled = currentSlideIndex === 0;
+            nextBtn.disabled = currentSlideIndex === totalSlides - 1;
+        }
+
+        function updateIndicators() {
+            const indicators = document.querySelectorAll('.indicator-dot');
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlideIndex);
+            });
+        }
+
+        function preloadNextSlide() {
+            // Preload next slide if it exists and isn't loaded yet
+            const nextIndex = currentSlideIndex + 1;
+            if (nextIndex < totalSlides && !iframesLoaded[nextIndex]) {
+                setTimeout(() => loadSlideContent(nextIndex), 500);
+            }
+        }
+
+        function loadSlideContent(index) {
+            const slide = document.querySelector(`[data-slide="${index}"]`);
+            const iframe = slide.querySelector('iframe');
+            
+            if (iframe && iframe.src && !iframesLoaded[index]) {
+                iframe.addEventListener('load', function() {
+                    hideLoadingSpinner(index);
+                    iframesLoaded[index] = true;
+                }, { once: true });
+                
+                // Trigger load by setting src again if needed
+                const currentSrc = iframe.src;
+                iframe.src = '';
+                iframe.src = currentSrc;
+            }
+        }
+
+        function hideLoadingSpinner(slideIndex) {
+            const slide = document.querySelector(`[data-slide="${slideIndex}"]`);
+            const spinner = slide.querySelector('.loading-spinner');
+            if (spinner) {
+                spinner.style.display = 'none';
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            switch(event.key) {
+                case 'ArrowLeft':
+                    event.preventDefault();
+                    changeSlide(-1);
+                    break;
+                case 'ArrowRight':
+                case ' ':
+                    event.preventDefault();
+                    changeSlide(1);
+                    break;
+                case 'Home':
+                    event.preventDefault();
+                    currentSlide(0);
+                    break;
+                case 'End':
+                    event.preventDefault();
+                    currentSlide(totalSlides - 1);
+                    break;
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                    event.preventDefault();
+                    currentSlide(parseInt(event.key) - 1);
+                    break;
+            }
+        });
+
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function(event) {
+            touchStartX = event.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function(event) {
+            touchEndX = event.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - go to next slide
+                    changeSlide(1);
+                } else {
+                    // Swipe right - go to previous slide
+                    changeSlide(-1);
+                }
+            }
+        }
+
+        // Prevent iframe from capturing focus and breaking keyboard navigation
+        document.addEventListener('click', function(event) {
+            if (event.target.tagName === 'IFRAME') {
+                event.target.blur();
+                document.body.focus();
+            }
+        });
+    </script>
+</body>
+</html>
