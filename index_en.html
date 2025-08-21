@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mara Hair Treatment - Wissenschaftliche Präsentation</title>
+    <title>Mara Hair Treatment - Scientific Presentation</title>
     <style>
         body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; background: #F9F8F6; overflow: hidden; }
         .slideshow { position: relative; width: 100vw; height: 100vh; }
@@ -25,22 +25,22 @@
 </head>
 <body>
     <div class="language-switch">
-        <a href="index.html" class="active">DE</a> |
-        <a href="index_en.html">EN</a>
+        <a href="index.html">DE</a> |
+        <a href="index_en.html" class="active">EN</a>
     </div>
     <div class="slideshow">
-        <div class="slide active"><iframe src="five_pillar_landscape.html"></iframe></div>
-        <div class="slide"><iframe src="prp.html"></iframe></div>
-        <div class="slide"><iframe src="exosome.html"></iframe></div>
-        <div class="slide"><iframe src="bloodtest.html"></iframe></div>
+        <div class="slide active"><iframe src="five_pillar_landscape_en.html"></iframe></div>
+        <div class="slide"><iframe src="prp_en.html"></iframe></div>
+        <div class="slide"><iframe src="exosome_en.html"></iframe></div>
+        <div class="slide"><iframe src="bloodtest_en.html"></iframe></div>
     </div>
     <button class="nav prev" onclick="changeSlide(-1)" id="prev">‹</button>
     <button class="nav next" onclick="changeSlide(1)" id="next">›</button>
     <div class="indicators">
-        <div class="dot active" onclick="currentSlide(0)"></div>
-        <div class="dot" onclick="currentSlide(1)"></div>
-        <div class="dot" onclick="currentSlide(2)"></div>
-        <div class="dot" onclick="currentSlide(3)"></div>
+        <div class="dot active" onclick="currentSlide(0)" title="Overview"></div>
+        <div class="dot" onclick="currentSlide(1)" title="PRP"></div>
+        <div class="dot" onclick="currentSlide(2)" title="Exosomes"></div>
+        <div class="dot" onclick="currentSlide(3)" title="Blood Analysis"></div>
     </div>
     <script>
         let current = 0;
