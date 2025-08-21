@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Science of Hair Growth: Presentation Slide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #F9F8F6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1vw;
+            box-sizing: border-box;
+        }
+        .slide {
+            width: 100%;
+            max-width: 1600px;
+            aspect-ratio: 16 / 9;
+            background: #F9F8F6;
+            display: flex;
+            flex-direction: column;
+            padding: 1.5vw 2vw;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e5e7eb;
+            border-radius: 1rem;
+        }
+        .brand-text {
+            color: #143737;
+        }
+        
+        /* Net effect alignment */
+        .neteffect-container {
+            margin-top: auto;
+            padding-top: 1.5rem;
+            border-top: 2px solid #e5e7eb;
+            min-height: 3.5vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .neteffect-text {
+            font-weight: 700;
+            text-align: center;
+            color: #143737;
+            font-size: 0.9vw;
+            line-height: 1.4;
+        }
+        
+        /* Mara authentic colors */
+        :root {
+            --mara-primary: #143737;
+            --mara-accent1: #c79653;
+            --mara-accent2: #8B4513;
+            --mara-accent3: #2E8B57;
+            --mara-accent4: #4682B4;
+            --mara-accent5: #CD853F;
+        }
+        .pathway-card {
+            background: #ffffff;
+            border-radius: 0.75rem;
+            padding: 1.2vw;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+        .pathway-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--card-accent-color, #143737);
+            border-radius: 0.75rem 0.75rem 0 0;
+        }
+        .pathway-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        .pathway-title {
+            font-size: 1.1vw;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-align: center;
+            padding: 0.5rem 0;
+            color: #143737;
+            height: 3.5vw; /* Fixed height for consistent alignment */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .description-container {
+            height: 6vw; /* Fixed height for description area */
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .description-text {
+            font-size: 0.8vw;
+            color: #666666;
+            line-height: 1.5;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+        .mechanism-steps-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 10vw; /* Fixed height to ensure alignment */
+        }
+        .mechanism-step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+            text-align: left;
+            padding: 0.3rem 0;
+        }
+        .step-number {
+            flex-shrink: 0;
+            width: 1.8vw;
+            height: 1.8vw;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8vw;
+            color: white;
+            margin-right: 0.8rem;
+            background: var(--card-accent-color, #143737);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        /* Mini Diagram Styles */
+        .mini-diagram {
+            height: 6vw;
+            margin-bottom: 1rem;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+            border-radius: 0.5rem;
+        }
+        .mini-follicle-container {
+            position: relative;
+            width: 2.5vw;
+            height: 6vw;
+        }
+        .mini-follicle {
+            width: 2.5vw;
+            height: 5vw;
+            background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+            border: 2px solid #cbd5e1;
+            border-radius: 1.25vw;
+            position: absolute;
+            bottom: 1vw;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .mini-dp {
+            width: 1.25vw;
+            height: 1.25vw;
+            background: radial-gradient(circle, #a5b4fc 0%, #8b5cf6 100%);
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0.25vw;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            border: 1px solid #6366f1;
+        }
+        .mini-bulge {
+            width: 0.8vw;
+            height: 1.25vw;
+            background: radial-gradient(ellipse, #6ee7b7 0%, #10b981 100%);
+            border-radius: 0.4vw;
+            position: absolute;
+            top: 1.5vw;
+            left: -0.5vw;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            border: 1px solid #059669;
+        }
+        .mini-vessels {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3.5vw;
+            height: 1vw;
+        }
+        .vessel {
+            position: absolute;
+            bottom: 0.25vw;
+            height: 0.4vw;
+            border-radius: 0.2vw;
+            background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Protective Shield for Finasteride */
+        .protective-shield {
+            position: absolute;
+            width: 4.5vw;
+            height: 4.5vw;
+            border: 2px dashed #8B4513;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.8;
+            animation: shield-pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes shield-pulse {
+            0%, 100% { 
+                border-color: #8B4513;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% { 
+                border-color: #A0522D;
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <div class="slide-container">
+        <div class="slide">
+            <header class="text-center mb-4">
+                <img src="https://cdn.prod.website-files.com/686ba99f7e881278bf8341e5/686bafa8ce0f0a4ccaf45537_mara-logo.svg" alt="Mara Logo" class="h-[2.2vw] max-h-10 mx-auto mb-2">
+                <h1 class="text-[2.2vw] lg:text-4xl font-bold brand-text leading-tight">
+                    The Cellular Battle for <span style="color: #c79653; text-shadow: 0 1px 2px rgba(0,0,0,0.1);">Hair Growth</span>
+                </h1>
+            </header>
+    
+            <main class="w-full flex-grow">
+                <div class="grid grid-cols-5 gap-[1.2vw] h-full">
+                    <!-- PRP -->
+                    <div class="pathway-card" style="--card-accent-color: #c79653;">
+                        <div class="mini-diagram">
+                            <div class="mini-follicle-container">
+                                <div class="mini-follicle"><div class="mini-dp"></div><div class="mini-bulge"></div></div>
+                                <div class="mini-vessels"><div class="vessel" style="width: 100%; left: 0;"></div></div>
+                            </div>
+                        </div>
+                        <h2 class="pathway-title" style="color: #c79653;">PRP: The Bio-Stimulator</h2>
+                        <div class="description-container">
+                            <p class="description-text">Platelet-Rich Plasma (PRP) harnesses a high concentration of your own platelets to deliver a powerful cocktail of growth factors directly to the follicle.</p>
+                        </div>
+                        <div class="mechanism-steps-container">
+                            <div class="mechanism-step"><div class="step-number">1</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Growth Factor Release</h3><p class="text-[0.78vw] text-gray-600 leading-snug">Activated platelets release growth factors that saturate the follicle environment.</p></div></div>
+                            <div class="mechanism-step"><div class="step-number">2</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">DP & Bulge Activation</h3><p class="text-[0.78vw] text-gray-600 leading-snug">These factors signal the dermal papilla and stem cells to push dormant follicles into growth phase.</p></div></div>
+                        </div>
+                        <div class="neteffect-container">
+                            <h4 class="neteffect-text">Net Effect: Initiates Growth Cycle</h4>
+                        </div>
+                    </div>
+    
+                    <!-- Exosomes -->
+                    <div class="pathway-card" style="--card-accent-color: #2E8B57;">
+                        <div class="mini-diagram">
+                            <div class="mini-follicle-container">
+                                <div class="mini-follicle"><div class="mini-dp"></div><div class="mini-bulge"></div></div>
+                                <div class="mini-vessels"><div class="vessel" style="width: 100%; left: 0;"></div></div>
+                            </div>
+                        </div>
+                        <h2 class="pathway-title" style="color: #2E8B57;">Exosomes: The Messengers</h2>
+                        <div class="description-container">
+                            <p class="description-text">Exosomes are microscopic vesicles rich in growth factors and genetic material. They act as direct communicators, delivering regenerative instructions.</p>
+                        </div>
+                        <div class="mechanism-steps-container">
+                            <div class="mechanism-step"><div class="step-number">1</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Direct Signaling</h3><p class="text-[0.78vw] text-gray-600 leading-snug">Exosomes are taken up by dermal papilla and bulge region cells, releasing their cargo.</p></div></div>
+                            <div class="mechanism-step"><div class="step-number">2</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Cell Proliferation</h3><p class="text-[0.78vw] text-gray-600 leading-snug">The instructions cause cells to multiply and regenerate the follicle for a new growth phase.</p></div></div>
+                        </div>
+                        <div class="neteffect-container">
+                            <h4 class="neteffect-text">Net Effect: Rejuvenation & Activation</h4>
+                        </div>
+                    </div>
+
+                    <!-- Minoxidil -->
+                    <div class="pathway-card" style="--card-accent-color: #4682B4;">
+                        <div class="mini-diagram">
+                            <div class="mini-follicle-container">
+                                <div class="mini-follicle"><div class="mini-dp"></div></div>
+                                <div class="mini-vessels"><div class="vessel animate-pulse" style="width: 100%; left: 0;"></div></div>
+                            </div>
+                        </div>
+                        <h2 class="pathway-title" style="color: #4682B4;">Minoxidil: The Stimulator</h2>
+                        <div class="description-container">
+                            <p class="description-text">Originally a blood pressure medication, minoxidil's primary mechanism is vasodilation, but it also has direct effects on the follicle's growth cycle.</p>
+                        </div>
+                        <div class="mechanism-steps-container">
+                            <div class="mechanism-step"><div class="step-number">1</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Vasodilation</h3><p class="text-[0.78vw] text-gray-600 leading-snug">Opens potassium channels in blood vessels, increasing blood flow and nutrient supply to the follicle.</p></div></div>
+                            <div class="mechanism-step"><div class="step-number">2</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Anagen Phase Extension</h3><p class="text-[0.78vw] text-gray-600 leading-snug">Directly stimulates DP cells and extends the growth phase, resulting in longer and thicker hair.</p></div></div>
+                        </div>
+                        <div class="neteffect-container">
+                            <h4 class="neteffect-text">Net Effect: Enhanced Blood Flow & Longer Growth</h4>
+                        </div>
+                    </div>
+    
+                    <!-- Finasteride -->
+                    <div class="pathway-card" style="--card-accent-color: #8B4513;">
+                        <div class="mini-diagram">
+                            <div class="mini-follicle-container">
+                                <div class="protective-shield"></div>
+                                <div class="mini-follicle"><div class="mini-dp"></div></div>
+                            </div>
+                        </div>
+                        <h2 class="pathway-title" style="color: #8B4513;">Finasteride: The Protector</h2>
+                        <div class="description-container">
+                            <p class="description-text">Finasteride works systemically to protect the hair follicle from the miniaturizing effects of dihydrotestosterone (DHT), the main culprit in male pattern baldness.</p>
+                        </div>
+                        <div class="mechanism-steps-container">
+                            <div class="mechanism-step"><div class="step-number">1</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Enzyme Inhibition</h3><p class="text-[0.78vw] text-gray-600 leading-snug">Blocks the 5-alpha-reductase enzyme, preventing the conversion of testosterone to DHT.</p></div></div>
+                            <div class="mechanism-step"><div class="step-number">2</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Follicle Protection</h3><p class="text-[0.78vw] text-gray-600 leading-snug">With less DHT, DP cells no longer receive the signal to shrink. This stops miniaturization.</p></div></div>
+                        </div>
+                        <div class="neteffect-container">
+                            <h4 class="neteffect-text">Net Effect: Stops Miniaturization</h4>
+                        </div>
+                    </div>
+                    
+                    <!-- Supplements -->
+                    <div class="pathway-card" style="--card-accent-color: #CD853F;">
+                        <div class="mini-diagram">
+                            <div class="mini-follicle-container">
+                                <div class="mini-follicle"><div class="mini-dp"></div><div class="mini-bulge"></div></div>
+                                <div class="mini-vessels"><div class="vessel" style="width: 45%; left: 0; background-color: #f87171;"></div><div class="vessel" style="width: 45%; right: 0; background-color: #60a5fa;"></div></div>
+                            </div>
+                        </div>
+                        <h2 class="pathway-title" style="color: #CD853F;">Supplements</h2>
+                        <div class="description-container">
+                            <p class="description-text">Supplements work systemically to create an optimal internal environment for healthy hair growth by providing essential building blocks and protection.</p>
+                        </div>
+                        <div class="mechanism-steps-container">
+                            <div class="mechanism-step"><div class="step-number">1</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Hormonal Balance</h3><p class="text-[0.78vw] text-gray-600 leading-snug">Saw palmetto can help lower DHT levels, while vitamins and minerals nourish the follicle.</p></div></div>
+                            <div class="mechanism-step"><div class="step-number">2</div><div><h3 class="font-semibold text-[0.9vw] text-gray-800">Cellular Protection</h3><p class="text-[0.78vw] text-gray-600 leading-snug">Antioxidants like curcumin and vitamin E protect the follicle from oxidative stress.</p></div></div>
+                        </div>
+                        <div class="neteffect-container">
+                            <h4 class="neteffect-text">Net Effect: Provides Building Blocks & Reduces Damage</h4>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
